@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            const date1 = new Date()
+            console.info(date1, "<< ambil value date saat ini")
+
+            const date2 = new Date(2020, 10, 10)
+            console.info(date2, "<< ambil value date pada waktu yang telah di inisiasi")
+
+            const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+            console.info(date3, "<<ambil value date sampai milis");
+
+            const date4 = new Date(1623167419514);
+            console.info(date4, "<<value date dari epoch atau unix timestamp");
+        }
+        console.info("======")
+        {
+            const date1 = new Date()
+            console.info(date1.getTime(), "<<ambil value date saat ini dalam bentuk unix atau epoch")
+
+            const date2 = new Date(2020, 10, 10);
+            console.info(date2.getTime(), "<<ambil value date tanggal, bulan, tahun dalam bentuk unix atau epoch");
+
+            const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+            console.info(date3.getTime(), "<<ambil value date tanggal, bulan, tahun, waktu sampai mili dalam bentuk unix atau epoch");
+
+            const date4 = new Date(1623167419514);
+            console.info(date4.getTime(), "<< membuat date dari epoch atau unix timestamp");
+
+            console.info(Date.now());
+        }
+        console.info("======")
+        {
+            const time = Date.parse("2020-10-10T08:45:45.123+07:00")
+            console.info(time, "<<< membuat date dari string, dan hasilnya dalam bentuk unix timestamp");
+
+            const date = new Date(time);
+            console.info(date, "<<<mengubah bentuk unix menjadi bentuk time");
+        }
+        console.info("======")
+        {
+            const date = new Date();
+
+            console.info(date.getFullYear(), "<<ambil value tahun saat ini");
+            console.info(date.getMonth(), "<<< ambil value bulan saat ini");
+            console.info(date.getDate(), "<<< ambil value tanggal saat ini");
+            console.info(date.getHours(), "<<ambil hours saat ini");
+            console.info(date.getMinutes(), "<<ambil minutes saat ini");
+            console.info(date.getSeconds(), "<<<ambil seconds saat ini");
+            console.info(date.getMilliseconds(), "<<<ambil miliseconds saat ini");
+            console.info(date.getTimezoneOffset(), "<<< hasilnya minus -420 dan itu adalah jarak dengan UTC, dari +7jam ke utx rangenya -420");
+        }
+    </script>
+</body>
+</html>

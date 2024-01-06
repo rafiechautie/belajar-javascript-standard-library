@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input = "12345";
+
+        const number = Number(input) //konversi dari tipe data string ke number
+
+        console.log(number, "<<<konveri string ke number")
+        console.log(typeof(input), "<<<cek tipe data variabel input")
+        console.log(typeof(number), "<<<cek tipe data variable number")
+
+        console.log(Number("String"), "<<<cek value yang bukan valid number")
+
+        console.log(Number.MIN_VALUE, "<<< cek nilai terkecil Number")
+        console.log(Number.MAX_VALUE, "<<< cek nilai terbesar number")
+        console.log(Number.MIN_SAFE_INTEGER, "<<< cek nilai min safe integer")
+        console.log(Number.MAX_SAFE_INTEGER, "<<< cek nilai max safe integer")
+        console.log(Number.NaN, "<<< cek nilai NAN")
+
+        const data = Number("rafie")
+        console.info(Number.isInteger(data), "cek value 'rafie'");
+        console.info(Number.isNaN(data), "cek value rafie nan atau ngak");
+
+
+        const value = Number("12345");
+        console.info(value.toString(2), "ubah number menjadi format binary");
+        console.info(value.toLocaleString("id-ID"), "number dalam bahasa indonesia (dalam ribuang menggunakan titik)");
+        console.info(value.toLocaleString("en-US"), "number dalam bahasa amerika(dalam ribuan menggunakan koma)");
+    </script>
+</body>
+</html>

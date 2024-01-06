@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            // create regex
+
+            //ada 3 cara untuk membuat regex
+            const regex1 = /rafie/;
+            const regex2 = new RegExp("rafie")
+            const regex3 = new RegExp(/rafie/)
+        }
+        {
+            // test regex
+
+            const name = "Muhammad Rafie Chautie"
+            const regex = /Rafie/
+
+            const result = regex.exec(name)
+            console.info(result, "<< cari value yang ada");
+            console.info(regex.exec("tidak ada"), "<<cari value yang tidak ada")
+
+            const test = regex.test(name)
+            console.info(test, "<<mengembalikan value jika nilai regex ada di name")
+            console.info(regex.test("tidak ada"), "<<mengembalikan value jika nilai regex tidak ada di name")
+        }
+        {
+
+            //regex modifier
+
+            const name = "eko kurniawan\nEko khannedy\nEdo Kurniawan";
+            const regex1 = /^e.o/igm
+            const regex2 = /Kurniawan/ig
+
+            let result;
+            while ((result = regex1.exec(name)) !== null) {
+                console.info(result);
+            }
+
+            while ((result = regex2.exec(name)) !== null) {
+                console.info(result);
+            }
+
+        }
+        {
+            // advance regex
+
+            const regex = /ek[aiueo]/ig
+
+            const name = "eko eki eka eku eke edo eko eki";
+
+            let result 
+            while((result = regex.exec(name)) !== null){
+                console.info(result)
+            }
+        }
+
+        {
+            const name = "edo eko eki eka eku eke edo eko eki";
+
+            console.info(name.match(/ek[aiueo]/ig))
+            console.info(name.search(/ek[aiueo]/ig))
+            console.info(name.replace(/ek[aiueo]/i, "kamu"))
+            console.info(name.replaceAll(/ek[aiueo]/ig, "kamu"));
+            console.info(name.split(/e/ig))
+        }
+
+    </script>
+</body>
+</html>

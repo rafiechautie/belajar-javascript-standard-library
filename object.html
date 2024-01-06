@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            // object freeze & seal
+
+            const person = {
+                firstName: "Eko",
+                lastName: "Khannedy"
+            };
+
+            Object.freeze(person) //buat dia tidak bisa dihapus maupun di modifikasi
+
+            person.firstName = "Budi"
+            person.middleName = "Kurniawan"
+            delete person.lastName
+
+            console.info(person, "liat value object person")
+        }
+        {
+            //object assign
+
+            const target = {
+                firstName: "Rafie"
+            }
+            const source = {
+                lastName: "Chautie"
+            }
+
+            Object.assign(target, source);
+            console.info(target, "<<<ini value target")
+            console.info(source, "<<<ini value source")
+        }
+        {
+            const person = {
+                firstName: "Rafie",
+                lastName: "Chautie"
+            }
+            console.info(Object.values(person), "<<< value object person") // ambil value objectnya
+            console.info(Object.getOwnPropertyNames(person), "<<< properties object person") // ambil properties objectnya
+        }
+    </script>
+</body>
+</html>

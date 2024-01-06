@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            // array loop
+            const array = ["Muhammad", "Rafie", "Chautie"]
+
+            //cara 1
+            array.forEach(function(value, index) {
+                console.info(`${index}: ${value}`, "<<< perulangan foreach dengan cara pertama")
+            })
+
+            //cara 2
+            array.forEach((value, index) => console.info(`${index} : ${value}`, "<<< perulangan foreach dengan cara kedua"))
+
+            // cara 3
+            array.forEach(value => console.info(value, "<<< perulangan foreach dengan cara ketiga"))
+        }
+
+        console.log("========")
+
+        {
+            //antrian
+            const queue = []
+
+            queue.push("Muhammad")
+            queue.push("Rafie")
+            queue.push("Chautie")
+
+            console.info(queue.shift(), "<<< ambil antrian 1");
+            console.info(queue.shift(), "<<< ambil antrian 2");
+            console.info(queue.shift(), "<<< ambil antrian 3");
+            console.info(queue.shift(), "<<< ambil antrian 4 atau undefined karna antrian hanya sampe 3");
+        }
+
+        {
+            // tumpukan
+            const stack = [];
+
+            stack.push("Eko");
+            stack.push("Kurniawan");
+            stack.push("Khannedy");
+
+            console.info(stack.pop(), "<<< ambil tumpukan 1");
+            console.info(stack.pop(), "<<< ambil tumpukan 2");
+            console.info(stack.pop(), "<<< ambil tumpukan 3");
+            console.info(stack.pop(), "<<< ambil tumpukan 4 atau undefined");
+        }
+
+        {
+            // search
+            const data =  [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+            console.info(data.find(value => value > 3), "<<<mengembalikan value yang dicari");
+            console.info(data.findIndex(value => value > 3), "<<<mengembalikan index value yang dicari");
+            console.info(data.includes(7), "<<<mengembalikan apakah value 7 ada di kumpulan data tersebut");
+            console.info(data.indexOf(5), "<<<misal di dalam array ada 2 rafie, maka dia akan mengembalikan posisi index pada “rafie” di urutan yang berada  paling pertama dan jika tidak ada maka dia akan mengembalikan value -1");
+            console.info(data.lastIndexOf(5), "<<<misal di dalam array ada 2 rafie, maka dia akan mengembalikan posisi index pada “rafie” di urutan yang berada  paling belakang dan jika tidak ada maka dia akan mengembalikan value -1");
+        }
+
+        {
+            // filter
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const ganjil = numbers.filter(value => value % 2 === 1); // mengembalikan array
+            const genap = numbers.filter(value => value % 2 === 0); // mengembalikan array
+
+            console.info(numbers, "<<array yang belum difilter");
+            console.info(ganjil, "<<array yang sudah difilter");
+            console.info(genap, "<<array yang sudah difilter");
+        }
+        {
+            // array tranform
+
+            const names = ["Eko", "Kurniawan", "Khannedy"];
+            const namesUpper = names.map(value => value.toUpperCase());
+            console.info(namesUpper, "<<tranform setiap value di dalam array menjadi upper");
+
+            const namesReduce = names.reduce((before, value) => before + " " + value);
+            console.info(namesReduce, );
+
+            const namesRight = names.reduceRight((before, value) => before + " " + value);
+            console.info(namesRight, "<<< khaneddy diambil setelah itu masuk ke before, lalu dipisahkan oleh spasi dan digabung lagi sama kurniawan, lalu kuniawan khaneddy masuk ke bfore dan digabung sama eko");
+
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const total = numbers.reduce((before, value) => before + value);
+            console.info(total, "<<<penambahan nilai di dalam array menggunakan reduce");
+        }
+    </script>
+</body>
+</html>
